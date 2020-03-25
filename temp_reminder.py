@@ -141,7 +141,7 @@ def send_reminder(context):
 
 
 def update_reminder_list(new_reminder, user_data):
-    print("new " + new_reminder)
+    #  print("new " + new_reminder)
     new_reminder = new_reminder.split(',')
     input_days = new_reminder[0].upper()
     input_time = new_reminder[1].strip()
