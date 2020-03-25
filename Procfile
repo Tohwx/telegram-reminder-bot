@@ -1,1 +1,1 @@
-web: python temp_reminder.py
+worker: python temp_reminder.py
