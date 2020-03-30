@@ -5,7 +5,7 @@ from telegram.ext import Updater, CommandHandler, \
     MessageHandler, Filters
 import datetime
 
-bot_token = "$TOKEN"
+bot_token = "1139886156:AAEJlW38uy7iqO5MyWNEOHPdATdjDSlH8vE"
 
 days = ['ALL', 'WD', 'WE', 'M', 'T', 'W', 'R', 'F', 'S', 'N']
 days_dict = {
@@ -262,12 +262,9 @@ def view(update, context):
             #  print(revert_input(reminder))
             curr_reminders += f"""
                 {i+1} - {revert_input(reminder)}""".strip() + '\n'
-    view_msg = f"""
-        Your current reminders:
-            {curr_reminders}
-
-        /delete - to delete reminders
-    """.strip()
+    view_msg = "Your current reminders: \n" \
+        + f"{curr_reminders} \n\n" \
+        + "/delete - to delete reminders" 
     context.bot.send_message(chat_id, text=view_msg)
 
 
