@@ -48,7 +48,7 @@ start_msg = "Use this bot to set reminders. \n\n" \
 set_msg = "Setting a new reminder... \n\n" \
     + "Please input the day(s), time and reminder message in the following format: \n\n" \
     + "DAY(S), TIME, MESSAGE \n\n" \
-    + "For DAY(S): \n "\
+    + "For DAY(S): \n"\
     + "\t- All: Everyday \n"\
     + "\t- WD: Weekdays \n"\
     + "\t- WE: Weekends \n"\
@@ -255,6 +255,7 @@ def view(update, context):
     chat_id = update.effective_chat.id
     chat_data = context.chat_data
     user_data = context.user_data 
+    chat_data['state'] = 0
     curr_reminders = ''
     
     if 'reminder_list' in user_data:
@@ -277,6 +278,7 @@ def delete(update, context):
         
 def unknown_cmd(update, context):
     chat_id = update.effective_chat.id
+    chat_data['state'] = 0
     context.bot.send_message(chat_id, text=error_msg["invalid_command"])
 
 
