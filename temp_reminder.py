@@ -5,7 +5,7 @@ from telegram.ext import Updater, CommandHandler, \
     MessageHandler, Filters
 import datetime
 
-bot_token = "$TOKEN"
+bot_token = "1139886156:AAEJlW38uy7iqO5MyWNEOHPdATdjDSlH8vE"
 
 days = ['ALL', 'WD', 'WE', 'M', 'T', 'W', 'R', 'F', 'S', 'N']
 days_dict = {
@@ -40,35 +40,26 @@ error_msg = {
     "invalid_command":  "Please enter a valid command."
 }
 
-start_msg = """
-    Use this bot to set reminders. \n\n
-    /set - set new reminder
-    /view - view your reminders
-    /delete - delete reminders
-"""
+start_msg = "Use this bot to set reminders. \n\n" \
+    + "/set - set new reminder \n" \
+    + "/view - view your reminders \n" \
+    + "/delete - delete reminders"
 
-set_msg = """
-    Setting a new reminder... \n\n \
-    Please input the day(s), time and reminder message in the \
-    following format: \n\n \
-    DAY(S), TIME, MESSAGE \n\n \
-    For DAY(S): 
-        - All: Everyday
-        - WD: Weekdays
-        - WE: Weekends
-        - Use 'R' for Thu and 'N' for Sun \n
-    E.G. MRN, 1500, Take temperature \n\n \
-    /cancel to exit 
+set_msg = "Setting a new reminder... \n\n" \
+    + "Please input the day(s), time and reminder message in the following format: \n\n" \
+    + "DAY(S), TIME, MESSAGE \n\n" \
+    + "For DAY(S): \n "\
+    + "\t- All: Everyday \n"\
+    + "\t- WD: Weekdays \n"\
+    + "\t- WE: Weekends \n"\
+    + "\t- Use 'R' for Thu and 'N' for Sun \n"\
+    + "E.G. Enter MRN, 1500, Take temperature to set reminder for  Mon, Thu & Sun \n\n" \
+    + "/cancel to exit"
 
-"""
+del_msg = "Which reminder do you want to remove? \n" \
+    + "Enter a number. \n" \
+    + "/cancel to exit \n"
 
-del_msg = """
-    Which reminder do you want to remove?
-
-    Enter a number.
-    
-    /cancel to exit
-"""
 
 def convert_days(day_tup):
     result = ''
