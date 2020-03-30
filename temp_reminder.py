@@ -5,7 +5,7 @@ from telegram.ext import Updater, CommandHandler, \
     MessageHandler, Filters
 import datetime
 
-bot_token = "1139886156:AAEJlW38uy7iqO5MyWNEOHPdATdjDSlH8vE"
+bot_token = "$TOKEN"
 
 days = ['ALL', 'WD', 'WE', 'M', 'T', 'W', 'R', 'F', 'S', 'N']
 days_dict = {
